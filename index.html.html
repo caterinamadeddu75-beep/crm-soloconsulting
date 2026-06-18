@@ -1033,7 +1033,7 @@ function sendEmailWithAttach(){
   const r=selRecord;if(!r)return;
   const email=r.email||r.em||'';if(!email){alert('Nessuna email per questo contatto.');return;}
   const subject=document.getElementById('attach-subject').value;
-  window.open(gmailLink(email,subject),'_blank');
+  const body=document.getElementById('cbody')?document.getElementById('cbody').value:'';
   if(attachedFiles.length>0){
     setTimeout(()=>{alert(`Gmail aperto!\n\nFile da allegare (${attachedFiles.length}):\n${attachedFiles.map(f=>f.name).join('\n')}\n\nClicca 📎 in Gmail per allegarli.`);},800);
   }
